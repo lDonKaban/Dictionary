@@ -7,11 +7,11 @@
     gap: 8px;
 }
 
-.term-card_title {
+.term-card__title {
     margin: 0;
 }
 
-.term-card_description {
+.term-card__description {
     font-size: 16px;
     margin: 0;
 }
