@@ -2,11 +2,27 @@ import './index.css';
 import { createRoot } from 'react-dom/client'
 import { TermList } from "./TermList.jsx";
 
-const syncTermList = () => {
-  reactRoot.render(<TermList terms={terms} onDelete={deleteTerm}/>);
+const saveTermList = (terms) => {
+  localStorage.setItem('termList', JSON.stringify(terms));
+};
+
+const restoreTermList = () => {
+  const rawTermList = localStorage.getItem('termList');
+
+  if (!rawTermList) {
+    return []
+  }
+
+  return JSON.parse(rawTermList)
 }
 
-let terms = []
+let terms = restoreTermList();
+
+const syncTermList = () => {
+  saveTermList(terms);
+  reactRoot.render(<TermList terms={terms} onDelete={deleteTerm}/>);
+};
+
 const addTerm = (title, description) => {
   terms.push({
     id: Date.now(),
