@@ -1,8 +1,9 @@
+import './TermCard.css'
 export const TermCard = () => {
     return (
-        <div>
-            <h2>React</h2>
-            <p>Библиотека для создания пользовательских интерфейсов</p>
+        <div className='term-card'>
+            <h2 className='term-card_title'>React</h2>
+            <p className='term-card_description'>Библиотека для создания пользовательских интерфейсов</p>
         </div>
     )
 }
