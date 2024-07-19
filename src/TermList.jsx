@@ -16,5 +16,5 @@ export const TermList = ({ terms }) => {
                 </li>
             ))}
         </ul>
-    )
-}
+    );
+};
