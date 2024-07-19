@@ -1,12 +1,12 @@
 import './index.css';
 import { createRoot } from 'react-dom/client'
-import { TermCard } from "./TermCard.jsx";
+import { TermList } from "./TermList.jsx";
 
 const descriptionList = document.getElementById('description-list');
 
 const reactRoot = createRoot(descriptionList);
 
-reactRoot.render(<TermCard />);
+reactRoot.render(<TermList />);
 
 const form = document.getElementById('add-description');
 
