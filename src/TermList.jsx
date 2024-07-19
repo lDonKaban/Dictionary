@@ -15,6 +15,11 @@ export const TermList = () => {
                     description='Функция, которая возвращает React-элемент'
                 />
             </li>
+            <li>
+                <TermCard
+                    title='Render'
+                />
+            </li>
         </ul>
     )
 }
