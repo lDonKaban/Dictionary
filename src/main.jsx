@@ -2,6 +2,10 @@ import './index.css';
 import { createRoot } from 'react-dom/client'
 import { TermList } from "./TermList.jsx";
 
+const syncTermList = () => {
+  reactRoot.render(<TermList terms={terms} onDelete={deleteTerm}/>);
+}
+
 let terms = []
 const addTerm = (title, description) => {
   terms.push({
@@ -12,14 +16,20 @@ const addTerm = (title, description) => {
 
   terms.sort((term1, term2) => (term1.title < term2.title ? -1 : 1));
 
-  reactRoot.render(<TermList terms={terms} />);
+  syncTermList();
+}
+
+const deleteTerm = (id) => {
+  terms = terms.filter(term => term.id !== id);
+
+  syncTermList();
 }
 
 const descriptionList = document.getElementById('description-list');
 
 const reactRoot = createRoot(descriptionList);
 
-reactRoot.render(<TermList terms={terms} />);
+syncTermList();
 
 const form = document.getElementById('add-description');
 
