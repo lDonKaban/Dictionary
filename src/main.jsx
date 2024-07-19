@@ -5,11 +5,10 @@ import { TermList } from "./TermList.jsx";
 let terms = []
 const addTerm = (title, description) => {
   terms.push({
+    id: Date.now(),
     title,
     description
   });
-
-  console.log('terms =', terms)
 
   terms.sort((term1, term2) => (term1.title < term2.title ? -1 : 1));
 
