@@ -1,4 +1,5 @@
 import { TermCard } from "./TermCard.jsx";
+import React from "react";
 import './TermList.css'
 
 export const TermList = ({ terms, onDelete }) => {

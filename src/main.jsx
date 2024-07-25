@@ -1,7 +1,10 @@
 import './index.css';
+import React from "react";
 import { createRoot } from 'react-dom/client'
 import { TermList } from "./TermList.jsx";
 
+const descriptionList = document.getElementById('description-list');
+const reactRoot = createRoot(descriptionList);
 const saveTermList = (terms) => {
   localStorage.setItem('termList', JSON.stringify(terms));
 };
@@ -40,10 +43,6 @@ const deleteTerm = (id) => {
 
   syncTermList();
 }
-
-const descriptionList = document.getElementById('description-list');
-
-const reactRoot = createRoot(descriptionList);
 
 syncTermList();
 
